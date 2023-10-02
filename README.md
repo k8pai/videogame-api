@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Video Games API React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React project that utilizes the CheapShark API to fetch information about video game deals and specific games based on their title.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+The project consists of a single component named `App`, which serves as the main entry point of the application. Here's a breakdown of the key features:
 
-### `npm start`
+- The component uses the `useState` and `useEffect` hooks from React for managing component state and side effects.
+- It also employs the `useSWR` hook for data fetching, which simplifies the process of making API requests.
+- The `fetcher` function is a custom function used for making API requests and parsing the JSON response.
+- The component renders a user interface with two sections:
+  1. A search bar to input a game title, and a "Search" button to trigger the search.
+  2. Two sections for displaying game information:
+      - "Search Results" section displays information about specific games based on the user's search.
+      - "Latest Deals" section shows information about the latest video game deals.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the project, follow these steps:
 
-### `npm test`
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install the required dependencies.
+4. Run `npm start` to start the development server.
+5. Open your browser and go to `http://localhost:3000` to view the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How it Works
 
-### `npm run build`
+1. Upon loading, the component makes an API request to CheapShark to fetch the latest video game deals using the `useSWR` hook. The response is stored in the `data` variable.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Users can enter a game title in the search bar and click the "Search" button. This triggers a request to CheapShark to search for games with the specified title. The results are displayed in the "Search Results" section.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. In both sections, the retrieved game information is displayed, including the game ID, title, normal price, sale price, savings percentage, and a link to visit the game on the Steam platform (if applicable).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+- `App.js`: The main component of the application.
+- `fetcher.js`: Contains a custom function for making API requests and parsing JSON responses.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `react`: The core library for building the user interface.
+- `swr`: A React hook for data fetching.
+- `fetch`: A web API for making HTTP requests.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Additional Notes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- This project assumes that there is an active internet connection for fetching data from the CheapShark API.
 
-## Learn More
+Feel free to explore and extend the project as needed for your specific use case!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
